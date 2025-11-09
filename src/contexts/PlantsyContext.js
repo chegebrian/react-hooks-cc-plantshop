@@ -10,7 +10,7 @@ function PlantsyProvider({ children }) {
   }
   const [plantName, setPlantName] = useState("");
   const [plantImage, setPlantImage] = useState("");
-  const [plantPrice, setPlantPrice] = useState();
+  const [plantPrice, setPlantPrice] = useState("");
 
   function handlePlantImage(e) {
     setPlantImage(e.target.value);
