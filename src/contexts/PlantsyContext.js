@@ -8,6 +8,19 @@ function PlantsyProvider({ children }) {
   function handleQuery(e) {
     setQuery(e.target.value);
   }
+  const [plantName, setPlantName] = useState("");
+  const [plantImage, setPlantImage] = useState("");
+  const [plantPrice, setPlantPrice] = useState();
+
+  function handlePlantImage(e) {
+    setPlantImage(e.target.value);
+  }
+  function handlePlantPrice(e) {
+    setPlantPrice(e.target.value);
+  }
+  function handlePlantName(e) {
+    setPlantName(e.target.value);
+  }
   useEffect(() => {
     async function fetchData() {
       try {
@@ -23,7 +36,19 @@ function PlantsyProvider({ children }) {
   );
 
   return (
-    <plantsyContext.Provider value={{ filteredPlants, query, handleQuery }}>
+    <plantsyContext.Provider
+      value={{
+        filteredPlants,
+        query,
+        handleQuery,
+        handlePlantImage,
+        handlePlantName,
+        handlePlantPrice,
+        plantImage,
+        plantName,
+        plantPrice,
+      }}
+    >
       {children}
     </plantsyContext.Provider>
   );
