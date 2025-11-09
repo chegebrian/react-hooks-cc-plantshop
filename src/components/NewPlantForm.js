@@ -20,6 +20,7 @@ function NewPlantForm() {
           placeholder="Plant name"
           value={plantName}
           onChange={handlePlantName}
+          required
         />
         <input
           type="text"
@@ -27,6 +28,7 @@ function NewPlantForm() {
           placeholder="Image URL"
           value={plantImage}
           onChange={handlePlantImage}
+          required
         />
         <input
           type="number"
@@ -35,6 +37,7 @@ function NewPlantForm() {
           placeholder="Price"
           value={plantPrice}
           onChange={handlePlantPrice}
+          required
         />
         <button type="submit">Add Plant</button>
       </form>
