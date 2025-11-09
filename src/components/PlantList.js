@@ -7,7 +7,11 @@ function PlantList() {
   console.log(plants);
 
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">
+      {plants?.map((plant, index) => (
+        <PlantCard key={plant.id}/>
+      ))}
+    </ul>
   );
 }
 
