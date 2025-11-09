@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function PlantCard({ name, image, price }) {
+  // useState to enable toggling between in stock and out of stock
   const [isTrue, setIsTrue] = useState(true);
   function handleStock() {
     setIsTrue((isTrue) => !isTrue);

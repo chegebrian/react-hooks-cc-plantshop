@@ -47,6 +47,30 @@
       "image": "sakuraimage",
       "price": "27",
       "id": 8
+    },
+    {
+      "name": "Calathea",
+      "image": "./images/monstera.jpg",
+      "price": "44.321",
+      "id": 9
+    },
+    {
+      "name": "Cherry",
+      "image": "./images/monstera.jpg",
+      "price": "22",
+      "id": 10
+    },
+    {
+      "name": "Mango",
+      "image": "./images/monstera.jpg",
+      "price": "24",
+      "id": 11
+    },
+    {
+      "name": "Apple",
+      "image": "./images/monstera.jpg",
+      "price": "90",
+      "id": 12
     }
   ]
 }

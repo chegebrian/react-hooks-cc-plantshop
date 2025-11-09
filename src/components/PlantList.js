@@ -3,6 +3,7 @@ import PlantCard from "./PlantCard";
 import { usePlantsy } from "../contexts/PlantsyContext";
 
 function PlantList() {
+  // retrieve props using our custom usePlantsy hook
   const { filteredPlants } = usePlantsy();
 
   return (

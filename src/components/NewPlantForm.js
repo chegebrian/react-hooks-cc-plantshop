@@ -2,6 +2,7 @@ import React from "react";
 import { usePlantsy } from "../contexts/PlantsyContext";
 
 function NewPlantForm() {
+  // retrieve props using our custom usePlantsy hook
   const {
     plantName,
     plantImage,
@@ -11,11 +12,14 @@ function NewPlantForm() {
     handlePlantPrice,
   } = usePlantsy();
 
+  // store our form data in an object so as to pass it in when posting data
   const data = {
     name: plantName,
     image: plantImage,
     price: plantPrice,
   };
+
+  // post method
   const options = {
     method: "POST",
     headers: {
@@ -23,9 +27,10 @@ function NewPlantForm() {
     },
     body: JSON.stringify(data),
   };
+
+  // form submit function
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(plantName, plantImage, plantPrice);
     fetch("http://localhost:6001/plants", options)
       .then((response) => {
         // Check if the request was successful

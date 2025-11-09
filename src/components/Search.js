@@ -2,6 +2,7 @@ import React from "react";
 import { usePlantsy } from "../contexts/PlantsyContext";
 
 function Search() {
+  // retrieve props using our custom usePlantsy hook
   const { query, handleQuery } = usePlantsy();
   return (
     <div className="searchbar">

@@ -5,6 +5,7 @@ import { PlantsyProvider } from "../contexts/PlantsyContext";
 
 function App() {
   return (
+    // wrap the components using the PlantsyProvider so as to get access to props in the PlantsyContext
     <PlantsyProvider>
       <div className="app">
         <Header />
