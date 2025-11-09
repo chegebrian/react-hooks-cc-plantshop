@@ -4,6 +4,10 @@ const plantsyContext = createContext();
 
 function PlantsyProvider({ children }) {
   const [plants, setPlants] = useState([]);
+  const [query, setQuery] = useState("");
+  function handleQuery(e) {
+    setQuery(e.target.value);
+  }
   useEffect(() => {
     async function fetchData() {
       try {
@@ -15,7 +19,7 @@ function PlantsyProvider({ children }) {
     fetchData();
   }, [setPlants]);
   return (
-    <plantsyContext.Provider value={{ plants }}>
+    <plantsyContext.Provider value={{ plants, query, handleQuery }}>
       {children}
     </plantsyContext.Provider>
   );
