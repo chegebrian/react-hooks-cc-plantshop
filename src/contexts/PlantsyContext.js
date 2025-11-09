@@ -1,10 +1,23 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const plantsyContext = createContext();
 
 function PlantsyProvider({ children }) {
+  const [plants, setPlants] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("http://localhost:6001/plants");
+        const data = await response.json();
+        setPlants(data);
+      } catch (error) {}
+    }
+    fetchData();
+  }, [setPlants]);
   return (
-    <plantsyContext.Provider value={{}}>{children}</plantsyContext.Provider>
+    <plantsyContext.Provider value={{ plants }}>
+      {children}
+    </plantsyContext.Provider>
   );
 }
 
