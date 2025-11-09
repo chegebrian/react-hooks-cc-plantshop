@@ -9,7 +9,12 @@ function PlantList() {
   return (
     <ul className="cards">
       {plants?.map((plant, index) => (
-        <PlantCard key={plant.id}/>
+        <PlantCard
+          key={plant.id}
+          name={plant.name}
+          image={plant.image}
+          price={plant.price}
+        />
       ))}
     </ul>
   );
