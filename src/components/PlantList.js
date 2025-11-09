@@ -3,11 +3,11 @@ import PlantCard from "./PlantCard";
 import { usePlantsy } from "../contexts/PlantsyContext";
 
 function PlantList() {
-  const { plants } = usePlantsy();
+  const { filteredPlants } = usePlantsy();
 
   return (
     <ul className="cards">
-      {plants?.map((plant, index) => (
+      {filteredPlants?.map((plant, index) => (
         <PlantCard
           key={plant.id}
           name={plant.name}

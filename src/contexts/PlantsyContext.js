@@ -18,8 +18,12 @@ function PlantsyProvider({ children }) {
     }
     fetchData();
   }, [setPlants]);
+  const filteredPlants = plants?.filter((plant) =>
+    plant.name.toLowerCase().includes(query?.toLowerCase())
+  );
+
   return (
-    <plantsyContext.Provider value={{ plants, query, handleQuery }}>
+    <plantsyContext.Provider value={{ filteredPlants, query, handleQuery }}>
       {children}
     </plantsyContext.Provider>
   );
